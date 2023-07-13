@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { useCallback, useRef, useState } from 'react';
 import { BsTrashFill } from 'react-icons/bs';
+import { LiaBirthdayCakeSolid } from 'react-icons/lia';
 import { useForm } from 'react-hook-form';
 import DeleteModal, {
   ModalDeleteHandle,
@@ -150,6 +151,7 @@ export default function GetClients() {
             <Table colorScheme="whiteAlpha" align="center" w="1rem" size="sm">
               <Thead>
                 <Tr>
+                  <Th />
                   <Th>Nome</Th>
                   <Th>Email</Th>
                   <Th>Celular</Th>
@@ -163,6 +165,9 @@ export default function GetClients() {
                 {itemFilters.length
                   ? itemFilters.map(client => (
                       <Tr key={client.id} cursor="pointer">
+                        <Td onClick={() => openDetailsClientModal(client)}>
+                          <LiaBirthdayCakeSolid size={25} />
+                        </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.name}
                         </Td>
@@ -208,6 +213,9 @@ export default function GetClients() {
                     ))
                   : data.clients.map(client => (
                       <Tr key={client.id} cursor="pointer">
+                        <Td onClick={() => openDetailsClientModal(client)}>
+                          <LiaBirthdayCakeSolid size={25} />
+                        </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.name}
                         </Td>
