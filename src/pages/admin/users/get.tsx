@@ -71,7 +71,7 @@ export default function GetUsers() {
   };
 
   return (
-    <Flex w={['90vw', '90vw', '90vw', '100vw', '70vw']} flexDir="column">
+    <Flex w={['90vw', '90vw', '100vw']} flexDir="column">
       <DeleteModal userId={userId} ref={modalDelete} />
       <Can permissions={['Cadastrar Usuario']}>
         <CreateUser ref={createUserModal} />
@@ -83,10 +83,11 @@ export default function GetUsers() {
         ref={modalDetailsUser}
       />
       <Flex
-        justify="space-evenly"
+        justify="center"
         flexDir={['column', 'row']}
         mt="2rem"
         align="center"
+        w="100%"
       >
         <Can permissions={['Cadastrar Usuario']}>
           <Button

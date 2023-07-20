@@ -72,17 +72,18 @@ export default function GetClients() {
   };
 
   return (
-    <Flex w={['90vw', '90vw', '90vw', '100vw', '70vw']} flexDir="column">
+    <Flex w={['90vw', '90vw', '100vw']} flexDir="column">
       <DeleteModal clientId={clientId} ref={modalDelete} />
       <DetailsClientModal client={client} ref={modalDetailsClientModal} />
       <Can permissions={['Cadastrar Cliente']}>
         <CreateClients ref={createClientModal} />
       </Can>
       <Flex
-        justify="space-evenly"
+        justify="center"
         flexDir={['column', 'row']}
         mt="2rem"
         align="center"
+        w="100%"
       >
         <Can permissions={['Cadastrar Cliente']}>
           <Button
@@ -139,8 +140,8 @@ export default function GetClients() {
             <Text>Falha ao obter dados dos clientes.</Text>
           </Flex>
         ) : (
-          <Flex flexDir="column" align="start">
-            <Flex justify="center" w="100%">
+          <Flex flexDir="column" align="center" justify="center" w="100%">
+            <Flex w="100%" justify="center">
               <Pagination
                 registersPerPage={itemsPerPage}
                 totalCountOfRegisters={data?.quantityOfClients}
@@ -219,6 +220,7 @@ export default function GetClients() {
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.name}
                         </Td>
+
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.email}
                         </Td>

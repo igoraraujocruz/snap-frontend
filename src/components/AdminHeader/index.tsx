@@ -7,7 +7,7 @@ export const AdminHeader = () => {
   return (
     <Flex
       flexDir="column"
-      w="100vw"
+      w="25rem"
       as="header"
       borderRadius="0 0 3rem 3rem"
       align="center"

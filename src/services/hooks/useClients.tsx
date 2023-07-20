@@ -56,9 +56,8 @@ export const getClients = async (
     const { data } = await api.get(
       `/clients?page=${page}&clientsPerPage=${clientsPerPage}`,
     );
-    const { data: total } = await api.get(`/clients`);
 
-    const clients = data.map((client: Client) => {
+    const clients = data.clients.map((client: Client) => {
       return {
         id: client.id,
         name: client.name,
@@ -77,7 +76,7 @@ export const getClients = async (
       };
     });
 
-    return { clients, quantityOfClients: total.length };
+    return { clients, quantityOfClients: data.totalClients };
   }
 };
 

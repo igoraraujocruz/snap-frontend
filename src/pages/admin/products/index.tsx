@@ -12,15 +12,16 @@ const Products = () => (
     <Head>
       <title>Produtos | Snap</title>
     </Head>
-    <Box>
+    <Flex flexDir="column" justify="center" align="center">
       <AdminHeader />
       <Flex
         justify="center"
         flexDir={['column', 'column', 'column', 'column', 'row']}
+        w="100%"
       >
         <GetProducts />
       </Flex>
-    </Box>
+    </Flex>
   </>
 );
 

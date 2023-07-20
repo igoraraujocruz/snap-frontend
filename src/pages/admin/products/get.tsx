@@ -74,17 +74,18 @@ export default function GetProducts() {
   };
 
   return (
-    <Flex w={['90vw', '90vw', '90vw', '100vw']} flexDir="column">
+    <Flex w={['90vw', '90vw', '100vw']} flexDir="column">
       <DeleteModal productId={productId} ref={modalDelete} />
       <DetailsProductModal product={product} ref={modalUploadImage} />
       <Can permissions={['Cadastrar Produto']}>
         <CreateProducts ref={createProductModal} />
       </Can>
       <Flex
-        justify="space-evenly"
+        justify="center"
         flexDir={['column', 'row']}
         mt="2rem"
         align="center"
+        w="100%"
       >
         <Can permissions={['Cadastrar Produto']}>
           <Button
@@ -139,8 +140,8 @@ export default function GetProducts() {
             <Text>Falha ao obter dados dos produtos.</Text>
           </Flex>
         ) : (
-          <Flex flexDir="column" align="start">
-            <Flex justify="center" w="100%">
+          <Flex flexDir="column" align="center" justify="center" w="100%">
+            <Flex w="100%" justify="center">
               <Pagination
                 registersPerPage={itemsPerPage}
                 totalCountOfRegisters={data?.quantityOfProduct}

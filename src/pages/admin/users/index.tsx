@@ -10,7 +10,7 @@ const Users = () => {
       <Head>
         <title>Usuários | Snap</title>
       </Head>
-      <Box>
+      <Flex flexDir="column" justify="center" align="center">
         <AdminHeader />
         <Flex
           justify="center"
@@ -18,7 +18,7 @@ const Users = () => {
         >
           <GetUsers />
         </Flex>
-      </Box>
+      </Flex>
     </>
   );
 };

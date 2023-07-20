@@ -54,12 +54,8 @@ const Clients = () => {
       <Head>
         <title>Clientes | Snap</title>
       </Head>
-      <Box>
+      <Flex flexDir="column" justify="center" align="center">
         <AdminHeader />
-        {/* <Can permissions={['Listar Cliente']}>
-          <Chart options={options} series={series} type="line" height={162} />
-        </Can> */}
-
         <Flex
           justify="center"
           flexDir={['column', 'column', 'column', 'column', 'row']}
@@ -67,7 +63,7 @@ const Clients = () => {
         >
           <GetClients />
         </Flex>
-      </Box>
+      </Flex>
     </>
   );
 };
