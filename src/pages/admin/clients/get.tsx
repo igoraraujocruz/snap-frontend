@@ -217,8 +217,14 @@ export default function GetClients() {
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {new Date(client.birthday).getUTCDate() ===
                             new Date().getDate() &&
-                            new Date(client.birthday).getMonth() + 1 ===
+                            new Date(client.birthday).getUTCMonth() + 1 ===
                               new Date().getMonth() + 1 && (
+                              <LiaBirthdayCakeSolid size={25} color="#FF6B00" />
+                            )}
+                          {new Date(client.birthday).getUTCMonth() + 1 >=
+                            new Date().getMonth() + 1 &&
+                            new Date(client.birthday).getUTCDate() !==
+                              new Date().getDate() && (
                               <LiaBirthdayCakeSolid size={25} />
                             )}
                         </Td>
@@ -234,7 +240,7 @@ export default function GetClients() {
                         </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {`${new Date(client.birthday).getUTCDate()}/${
-                            new Date(client.birthday).getMonth() + 1
+                            new Date(client.birthday).getUTCMonth() + 1
                           }/${new Date(client.birthday).getFullYear()}`}
                         </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
