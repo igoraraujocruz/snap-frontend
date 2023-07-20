@@ -215,7 +215,12 @@ export default function GetClients() {
                   : data.clients.map(client => (
                       <Tr key={client.id} cursor="pointer">
                         <Td onClick={() => openDetailsClientModal(client)}>
-                          <LiaBirthdayCakeSolid size={25} />
+                          {new Date(client.birthday).getUTCDate() ===
+                            new Date().getDate() &&
+                            new Date(client.birthday).getMonth() + 1 ===
+                              new Date().getMonth() + 1 && (
+                              <LiaBirthdayCakeSolid size={25} />
+                            )}
                         </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.name}
@@ -228,7 +233,9 @@ export default function GetClients() {
                           {client.mobilePhone}
                         </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
-                          {client.birthday}
+                          {`${new Date(client.birthday).getUTCDate()}/${
+                            new Date(client.birthday).getMonth() + 1
+                          }/${new Date(client.birthday).getFullYear()}`}
                         </Td>
                         <Td onClick={() => openDetailsClientModal(client)}>
                           {client.createdAt}

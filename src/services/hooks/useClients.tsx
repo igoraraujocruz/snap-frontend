@@ -63,9 +63,7 @@ export const getClients = async (
         name: client.name,
         email: client.email,
         mobilePhone: client.mobilePhone,
-        birthday: new Date(client.birthday).toLocaleDateString('pt-BR', {
-          timeZone: 'utc',
-        }),
+        birthday: client.birthday,
         points: client.points,
         shop: client.shop,
         createdAt: new Date(client.createdAt).toLocaleDateString('pt-BR', {
